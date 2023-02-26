@@ -13,18 +13,22 @@ public class LoginPage {
     private WebElement passwordTextBox;
     @FindBy(xpath = ".//input[@data-testid='royal_login_button']")
     private WebElement loginBtn;
-      public void enterUserName(String username){
+      public void enterUserName(String userName){
+
           if(loginTextBox.isDisplayed()){
-            //  loginTextBox.clear();
-              loginTextBox.sendKeys("bkimesfin12@gmail.com");
+              loginTextBox.clear();
+              userName="bkimesfin12@gmail.com";
+              loginTextBox.sendKeys(userName);
           }else{
               System.out.println("Element is not loaded");
           }
       }
       public void enterPassword(String password) {
+
           if (passwordTextBox.isDisplayed()) {
-             // passwordTextBox.clear();
-              passwordTextBox.sendKeys("Bereket@home312");
+             passwordTextBox.clear();
+              password="Bereket@home312";
+              passwordTextBox.sendKeys(password);
           } else {
               System.out.println("Element is not loaded");
           }
@@ -33,7 +37,6 @@ public class LoginPage {
               if (loginBtn.isDisplayed()){
                   loginBtn.click();
               }
-
               return new HomePage(driver);
           }
 
